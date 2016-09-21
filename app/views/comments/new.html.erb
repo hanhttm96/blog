@@ -1,0 +1,13 @@
+<%= form_for([@article, @article.comments.new]) do |f| %>
+	<div class="field comments" >
+		<%= f.label :comment %><br />
+		<%= f.text_field :body %>
+	</div>
+	<div class="field">
+    	<%= f.hidden_field :user_id, :value => current_user.id %>
+  	</div>
+	<div class="actions comment-btn">
+		<%= f.submit 'comment' %>
+	</div>
+
+<% end %>

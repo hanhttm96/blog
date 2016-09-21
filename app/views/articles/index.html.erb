@@ -1,0 +1,20 @@
+
+
+<% @articles.each do |article| %>
+<div class="media">
+  <div class="media-left">
+    <a href="#">
+      <%= image_tag article.image.url(:medium) %>
+    </a>
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading"><%= link_to article.title, article %></h4>
+    <p class="content">
+      <%= article.descriptions %>
+    </p>
+    <strong>Type: </strong> <%= article.type.name %>
+    <%= link_to 'View more...', article %>
+  </div>
+</div>
+<% end %>
+<br>

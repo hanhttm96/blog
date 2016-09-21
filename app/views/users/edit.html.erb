@@ -1,0 +1,12 @@
+<h1>Editing Account</h1>
+
+<%= render 'form' %>
+
+
+<% if current_user.profile.blank? %>
+	<%= link_to 'New Profile', new_profile_url %>
+<% else %>
+	<%= link_to 'Show Profile', @user.profile %>
+<% end %>
+
+| <%= link_to 'Back', root_path, :class => "btn btn-danger" %>

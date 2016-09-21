@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sharing</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<header id="main-container" >
+	<nav class="container">
+		<%= nav_links %>
+	</nav>
+</header><!-- /header -->
+
+<div id="main-container" class="container contents">
+	<%= content_tag :p, notice, :class => 'notice' if notice.present? %>
+	<%= content_tag :p, alert, :class => 'alert' if alert.present? %>
+	<div id="row">
+		<div id="main-content" class="col-xs-9">
+			<%= yield %>
+		</div>
+		<div class="col-xs-3">
+			<h2> Some role of blog</h2>
+			<p><strong>Article:</strong> Where admin write news. User can read and comment</p>
+			<p><strong>Share:</strong> Where user can write news. User can read and comment</p>
+			<p><strong>User:</strong> Must be register to write news or comment. If user have profile, User's image can be display at comment.</p>
+			<p><strong>Contact:</strong> User can contact to admin by contact function. If guest would like to contact to admin please click on : <a href="mailto:myhanhqt96@gmail.com?subject=[Sharing blog]" "email me">Admin</a> Or send to: <a>myhanhqt96@gmail.com</a></p>
+			<p><strong>Remember: confirm email when register!</strong></p>
+		</div>
+	</div>
+</div>
+
+<footer id="main-container" class="container-fluid jumbotron" >
+
+</footer>
+</body>
+</html>

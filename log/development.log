@@ -1,0 +1,1400 @@
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-21 08:43:08 +0700
+
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+):
+  activerecord (4.2.6) lib/active_record/migration.rb:392:in `check_pending!'
+  activerecord (4.2.6) lib/active_record/migration.rb:373:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.6) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.6) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.6) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.6) lib/rails/engine.rb:518:in `call'
+  railties (4.2.6) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /usr/lib/ruby/2.3.0/webrick/httpserver.rb:140:in `service'
+  /usr/lib/ruby/2.3.0/webrick/httpserver.rb:96:in `run'
+  /usr/lib/ruby/2.3.0/webrick/server.rb:296:in `block in start_thread'
+
+
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.6ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (169.3ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (22.8ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /var/lib/gems/2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (87.6ms)
+  [1m[36m (86.7ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (144.6ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateUsers (20160620010415)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar, "password" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160620010415"]]
+  [1m[35m (79.3ms)[0m  commit transaction
+Migrating to CreateProfiles (20160620010824)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "profiles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "birthday" date, "sex" varchar, "address" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160620010824"]]
+  [1m[35m (73.7ms)[0m  commit transaction
+Migrating to CreateTypes (20160620011234)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "types" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160620011234"]]
+  [1m[35m (96.5ms)[0m  commit transaction
+Migrating to CreateArticles (20160620011402)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "articles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "descriptions" varchar, "body" text, "type_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160620011402"]]
+  [1m[35m (74.0ms)[0m  commit transaction
+Migrating to AddUserIdToProfiles (20160620011630)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "profiles" ADD "user_id" varchar
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160620011630"]]
+  [1m[35m (71.9ms)[0m  commit transaction
+Migrating to CreateComments (20160620011820)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "body" text, "article_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160620011820"]]
+  [1m[35m (110.9ms)[0m  commit transaction
+Migrating to AddAttachmentAvatarToProfiles (20160620012333)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  ALTER TABLE "profiles" ADD "avatar_file_name" varchar
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "profiles" ADD "avatar_content_type" varchar[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "profiles" ADD "avatar_file_size" integer
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "profiles" ADD "avatar_updated_at" datetime[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160620012333"]]
+  [1m[36m (67.0ms)[0m  [1mcommit transaction[0m
+Migrating to AddAttachmentImageToArticles (20160620012912)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "articles" ADD "image_file_name" varchar[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "articles" ADD "image_content_type" varchar
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "articles" ADD "image_file_size" integer[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "articles" ADD "image_updated_at" datetime
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160620012912"]]
+  [1m[35m (61.5ms)[0m  commit transaction
+Migrating to CreateActiveAdminComments (20160620013821)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+DEPRECATION WARNING: `#timestamps` was called without specifying an option for `null`. In Rails 5, this behavior will change to `null: false`. You should manually specify `null: true` to prevent the behavior of your existing migrations from changing. (called from block in up at /home/vuong/Desktop/sharing-blog-vuong/db/migrate/20160620013821_create_active_admin_comments.rb:9)
+  [1m[35m (0.6ms)[0m  CREATE TABLE "active_admin_comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "namespace" varchar, "body" text, "resource_id" varchar NOT NULL, "resource_type" varchar NOT NULL, "author_id" integer, "author_type" varchar, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.2ms)[0m  [1mCREATE  INDEX "index_active_admin_comments_on_namespace" ON "active_admin_comments" ("namespace")[0m
+  [1m[35m (0.2ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_active_admin_comments_on_namespace' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_active_admin_comments_on_namespace' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1mCREATE  INDEX "index_active_admin_comments_on_author_type_and_author_id" ON "active_admin_comments" ("author_type", "author_id")[0m
+  [1m[35m (0.3ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_active_admin_comments_on_author_type_and_author_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_active_admin_comments_on_author_type_and_author_id' AND type='index'
+
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_active_admin_comments_on_namespace' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_active_admin_comments_on_namespace' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  CREATE  INDEX "index_active_admin_comments_on_resource_type_and_resource_id" ON "active_admin_comments" ("resource_type", "resource_id")
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160620013821"]]
+  [1m[35m (120.3ms)[0m  commit transaction
+Migrating to CreateShares (20160620082702)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "shares" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "descriptions" varchar, "body" text, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160620082702"]]
+  [1m[35m (129.4ms)[0m  commit transaction
+Migrating to AddTypeIdToShares (20160620083219)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  ALTER TABLE "shares" ADD "type_id" integer
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160620083219"]]
+  [1m[35m (75.9ms)[0m  commit transaction
+Migrating to AddAttachmentImageToShares (20160620084620)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  ALTER TABLE "shares" ADD "image_file_name" varchar
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "shares" ADD "image_content_type" varchar[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "shares" ADD "image_file_size" integer
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "shares" ADD "image_updated_at" datetime[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160620084620"]]
+  [1m[36m (49.3ms)[0m  [1mcommit transaction[0m
+Migrating to CreateContacts (20160620090711)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "contacts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "content" text, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160620090711"]]
+  [1m[36m (95.9ms)[0m  [1mcommit transaction[0m
+Migrating to AddUserIdToComments (20160622010107)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "comments" ADD "user_id" integer[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160622010107"]]
+  [1m[36m (50.3ms)[0m  [1mcommit transaction[0m
+Migrating to AddShareIdToComments (20160622083513)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "comments" ADD "share_id" integer[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160622083513"]]
+  [1m[36m (51.3ms)[0m  [1mcommit transaction[0m
+Migrating to CreateCommentshares (20160623064909)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "commentshares" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "body" varchar, "share_id" integer, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160623064909"]]
+  [1m[36m (75.9ms)[0m  [1mcommit transaction[0m
+Migrating to AddEmailConfirmToUsers (20160623075016)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "users" ADD "email_confirmed" boolean[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "users" ADD "confirm_token" varchar
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160623075016"]]
+  [1m[35m (76.3ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_active_admin_comments_on_resource_type_and_resource_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_active_admin_comments_on_resource_type_and_resource_id' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_active_admin_comments_on_author_type_and_author_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_active_admin_comments_on_author_type_and_author_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_active_admin_comments_on_namespace' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_active_admin_comments_on_namespace' AND type='index'
+
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-21 08:43:25 +0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.3ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 23080ms (Views: 23061.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/articles.self-eb2262cda91ef80193cdc5fc4671811d2678337d62ca2b5db36a81328597deda.css?body=1" for 127.0.0.1 at 2016-09-21 08:43:48 +0700
+
+
+Started GET "/assets/comments.self-c2b6144deb772d373a84c821142edaf55cfdecc4a3f6615b57000707aeaa3581.css?body=1" for 127.0.0.1 at 2016-09-21 08:43:48 +0700
+
+
+Started GET "/assets/commentshares.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-09-21 08:43:48 +0700
+
+
+Started GET "/assets/profiles.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-09-21 08:43:48 +0700
+
+
+Started GET "/assets/contacts.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-09-21 08:43:48 +0700
+
+
+Started GET "/assets/shares.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-09-21 08:43:48 +0700
+
+
+Started GET "/assets/types.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-09-21 08:43:48 +0700
+
+
+Started GET "/assets/application.self-3e33af54b11a9020ba7771c23b3720294e0c55981df235b630fd460610da6534.css?body=1" for 127.0.0.1 at 2016-09-21 08:43:48 +0700
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-09-21 08:43:48 +0700
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-09-21 08:43:48 +0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-09-21 08:43:48 +0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-09-21 08:43:48 +0700
+
+
+Started GET "/assets/articles.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-09-21 08:43:48 +0700
+
+
+Started GET "/assets/profiles.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-09-21 08:43:48 +0700
+
+
+Started GET "/assets/commentshares.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-09-21 08:43:48 +0700
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2016-09-21 08:43:48 +0700
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-09-21 08:43:48 +0700
+
+
+Started GET "/assets/share.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-09-21 08:43:48 +0700
+
+
+Started GET "/assets/shares.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-09-21 08:43:48 +0700
+
+
+Started GET "/assets/types.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-09-21 08:43:48 +0700
+
+
+Started GET "/assets/application.self-7862a8a8b42407b4741a1adeeea35f0d13ddc4f702ec532adb0674491d296495.js?body=1" for 127.0.0.1 at 2016-09-21 08:43:48 +0700
+
+
+Started GET "/assets/jquery-ui/widget.self-c1602241ddc51216b58391768667068867b8e15b9efc722befcd25771eda6819.js?body=1" for 127.0.0.1 at 2016-09-21 08:43:49 +0700
+
+
+Started GET "/assets/jquery-ui/core.self-93be4d22eda916787802a64d8f88b52db8a9027d4ccbbc0942625324a7d12d44.js?body=1" for 127.0.0.1 at 2016-09-21 08:43:49 +0700
+
+
+Started GET "/assets/jquery-ui/datepicker.self-6267be6d4d0f0e8665be3b4d6ac07f40ba23a32aff8eaa5d1bfc00f76a9eeae7.js?body=1" for 127.0.0.1 at 2016-09-21 08:43:49 +0700
+
+
+Started GET "/assets/jquery-ui/draggable.self-debcca3d0d5d9afe2fe91a6fd1aebdb41ca0a55f2f6017352e6c02b6d8a6e64c.js?body=1" for 127.0.0.1 at 2016-09-21 08:43:49 +0700
+
+
+Started GET "/assets/jquery-ui/button.self-4d4f21ba77bbf8cc08ae65e2b6329a7a1b952b32c3ba7bffca8313e7e8c93d0c.js?body=1" for 127.0.0.1 at 2016-09-21 08:43:49 +0700
+
+
+Started GET "/assets/jquery-ui/position.self-e693ced4ecfa1a276f0b794f32c1d30d792764b08788bf68ecfa3b388c291333.js?body=1" for 127.0.0.1 at 2016-09-21 08:43:49 +0700
+
+
+Started GET "/assets/jquery-ui/dialog.self-5a6c7980dfa3f6b74445b0f4b20eed799ee65363163500ed7f032e603d6b022d.js?body=1" for 127.0.0.1 at 2016-09-21 08:43:49 +0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-09-21 08:43:49 +0700
+
+
+Started GET "/assets/jquery-ui/sortable.self-df2d80a36f9dfbe0facc596ccd92af83ca50d38e4cd6a84810aaf5d40b8cd181.js?body=1" for 127.0.0.1 at 2016-09-21 08:43:49 +0700
+
+
+Started GET "/assets/active_admin/jquery_ui.self-01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b.js?body=1" for 127.0.0.1 at 2016-09-21 08:43:49 +0700
+
+
+Started GET "/assets/jquery-ui/mouse.self-c513294e8da73f31f84ba3ef11e2a1180a47faea0eb2fea4a53fc26153dd21fd.js?body=1" for 127.0.0.1 at 2016-09-21 08:43:49 +0700
+
+
+Started GET "/assets/jquery-ui/tabs.self-dc07b44bf1b926c8d28ccd2658e30933881e5329348caf70cf305c3943f6bbd7.js?body=1" for 127.0.0.1 at 2016-09-21 08:43:49 +0700
+
+
+Started GET "/assets/active_admin/lib/checkbox-toggler.self-ffdc88fc1b3b6bcfac3e314f191fc486175ab5a4b5daab87af6bd208cb483bd8.js?body=1" for 127.0.0.1 at 2016-09-21 08:43:49 +0700
+
+
+Started GET "/assets/jquery-ui/resizable.self-60b870565f3cd62982c1907828119bb51f42ec8228d5e23868153edc3abc685c.js?body=1" for 127.0.0.1 at 2016-09-21 08:43:49 +0700
+
+
+Started GET "/assets/active_admin/lib/flash.self-8f05a5d9328ea28fca100b057787fbfb567986513c5f1735ea48fad8f9571c10.js?body=1" for 127.0.0.1 at 2016-09-21 08:43:49 +0700
+
+
+Started GET "/assets/active_admin/lib/has_many.self-ece319debdc01ca5096ae8ac6c130ffc0decab382543b4b94e18591375d3d3bb.js?body=1" for 127.0.0.1 at 2016-09-21 08:43:49 +0700
+
+
+Started GET "/assets/active_admin/base.self-ab2cb3098b53fe7d229937d768d701e8f4013f2a5aea7988d8f2149fa40426db.js?body=1" for 127.0.0.1 at 2016-09-21 08:43:49 +0700
+
+
+Started GET "/assets/active_admin/lib/batch_actions.self-10ee4c07784b00259ca97a02c4e7fb53c1b27ebe5653a3b910426b4ea0941250.js?body=1" for 127.0.0.1 at 2016-09-21 08:43:49 +0700
+
+
+Started GET "/assets/active_admin/lib/per_page.self-d7697643296439a8f6aadbf22a229d8ce9b4e8e530ca854164398141006bcfda.js?body=1" for 127.0.0.1 at 2016-09-21 08:43:49 +0700
+
+
+Started GET "/assets/active_admin/lib/modal_dialog.self-0e86d9de4b99cb242de337a342f957f4872f686afc40f31f32d855672b1cd878.js?body=1" for 127.0.0.1 at 2016-09-21 08:43:49 +0700
+
+
+Started GET "/assets/active_admin/lib/table-checkbox-toggler.self-f5200d732ec9ffd4ee8fd1fe11524ad7b54a67f6c0ef447a29d119ece2dcecdb.js?body=1" for 127.0.0.1 at 2016-09-21 08:43:49 +0700
+
+
+Started GET "/assets/active_admin/application.self-50ffc9f86e474cd52ffb7ce3b3572255ad6646ea17097a056f330b540eae402c.js?body=1" for 127.0.0.1 at 2016-09-21 08:43:49 +0700
+
+
+Started GET "/assets/active_admin/ext/jquery.self-da8dafbbe883092bcae73f35a8caf4ae6170fe7d8130ae7039a233f9b509c757.js?body=1" for 127.0.0.1 at 2016-09-21 08:43:49 +0700
+
+
+Started GET "/assets/active_admin/ext/jquery-ui.self-f96f2ec2a32c4bc4da4292cc74bddeca0bb223d81a421c98c4d613632860945e.js?body=1" for 127.0.0.1 at 2016-09-21 08:43:49 +0700
+
+
+Started GET "/assets/active_admin/lib/dropdown-menu.self-161387c54d1640bd9f174301b77d73ea88ce6d7daf0d7356bd50b4d0143d1b72.js?body=1" for 127.0.0.1 at 2016-09-21 08:43:49 +0700
+
+
+Started GET "/assets/contacts.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-09-21 08:43:49 +0700
+
+
+Started GET "/assets/active_admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-09-21 08:43:49 +0700
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-09-21 08:43:49 +0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-09-21 08:43:49 +0700
+
+
+Started GET "/assets/bootstrap/affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for 127.0.0.1 at 2016-09-21 08:43:49 +0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-09-21 08:43:49 +0700
+
+
+Started GET "/assets/bootstrap/alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for 127.0.0.1 at 2016-09-21 08:43:49 +0700
+
+
+Started GET "/assets/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for 127.0.0.1 at 2016-09-21 08:43:49 +0700
+
+
+Started GET "/assets/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for 127.0.0.1 at 2016-09-21 08:43:49 +0700
+
+
+Started GET "/assets/bootstrap/tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for 127.0.0.1 at 2016-09-21 08:43:49 +0700
+
+
+Started GET "/assets/bootstrap/scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for 127.0.0.1 at 2016-09-21 08:43:49 +0700
+
+
+Started GET "/assets/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for 127.0.0.1 at 2016-09-21 08:43:49 +0700
+
+
+Started GET "/assets/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for 127.0.0.1 at 2016-09-21 08:43:49 +0700
+
+
+Started GET "/assets/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for 127.0.0.1 at 2016-09-21 08:43:49 +0700
+
+
+Started GET "/assets/bootstrap/collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for 127.0.0.1 at 2016-09-21 08:43:49 +0700
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2016-09-21 08:43:49 +0700
+
+
+Started GET "/assets/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for 127.0.0.1 at 2016-09-21 08:43:49 +0700
+
+
+Started GET "/assets/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for 127.0.0.1 at 2016-09-21 08:43:49 +0700
+
+
+Started GET "/shares" for 127.0.0.1 at 2016-09-21 08:43:52 +0700
+Processing by SharesController#index as HTML
+  [1m[36mShare Load (0.3ms)[0m  [1mSELECT "shares".* FROM "shares"[0m
+  Rendered shares/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 199ms (Views: 197.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-09-21 08:43:53 +0700
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 131ms (Views: 129.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2016-09-21 08:43:55 +0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FTGkFyjkiNMatAaqI7BPAZLA1OKfakFLtWximvArq/2d6Q0Vy4WyjqUwCI76zj//+7IGsuIH8Ji2i41vkRySYA==", "email"=>"ndvuong1996@gmail.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "ndvuong1996@gmail.com"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "ndvuong1996@gmail.com"]]
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 189ms (Views: 115.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2016-09-21 08:43:56 +0700
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-09-21 08:43:56 +0700
+
+
+Started GET "/users/new" for 127.0.0.1 at 2016-09-21 08:43:59 +0700
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (33.4ms)
+  Rendered users/new.html.erb within layouts/application (43.3ms)
+Completed 200 OK in 190ms (Views: 184.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2016-09-21 08:43:59 +0700
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-09-21 08:43:59 +0700
+
+
+Started POST "/users" for 127.0.0.1 at 2016-09-21 08:44:01 +0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UaUDaLCR2gKwGotF2EUHHB3gce2JCrMB8wGM40istSHZfapqU/DgXw+ehWEBO3fidJKjvfRnAtLw5mMWKZuMvA==", "user"=>{"email"=>"ndvuong1996@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("email", "password", "created_at", "updated_at", "confirm_token") VALUES (?, ?, ?, ?, ?)[0m  [["email", "ndvuong1996@gmail.com"], ["password", "36a84a0a604294371ae4f56190622ada6dae58f2"], ["created_at", "2016-09-21 01:44:01.723000"], ["updated_at", "2016-09-21 01:44:01.723000"], ["confirm_token", "oRI5gINRAbK7j8q2npmUVg"]]
+  [1m[35m (179.6ms)[0m  commit transaction
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from create at /home/vuong/Desktop/sharing-blog-vuong/app/controllers/users_controller.rb:27)
+  Rendered user_mailer/registration_confirmation.text.erb (0.8ms)
+
+UserMailer#registration_confirmation: processed outbound mail in 166.7ms
+
+Sent mail to ndvuong1996@gmail.com (10096.8ms)
+Date: Wed, 21 Sep 2016 08:44:02 +0700
+From: ndvuong1996@gmail.com
+To: ndvuong1996@gmail.com
+Message-ID: <57e1e5e21fb70_cd23fdfdaa67c4c862d7@superman.mail>
+Subject: Registration Confirmation
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Hi ndvuong1996@gmail.com,
+
+Thanks for registering! To confirm your registration click the URL below.
+
+https://sharing-blog-vuong.herokuapp.com/users/oRI5gINRAbK7j8q2npmUVg/confirm_email
+Redirected to http://localhost:3000/
+Completed 302 Found in 10492ms (ActiveRecord: 180.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-21 08:44:12 +0700
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 126ms (Views: 124.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-09-21 08:44:12 +0700
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2016-09-21 08:44:12 +0700
+
+
+Started GET "/login" for 127.0.0.1 at 2016-09-21 08:45:45 +0700
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 118ms (Views: 117.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2016-09-21 08:45:50 +0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pfVqxFy3JyAndDtkKxqP+vfO67uQ+fqLufNXEklhBkEtLcPGv9YdfZjwNUDyZP8Enrw56+2US1i6FLjnKFY/3A==", "email"=>"ndvuong1996@gmail.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "ndvuong1996@gmail.com"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "ndvuong1996@gmail.com"]]
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 142ms (Views: 130.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2016-09-21 08:45:50 +0700
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-09-21 08:45:50 +0700
+
+
+Started POST "/session" for 127.0.0.1 at 2016-09-21 08:45:58 +0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iHEhLyfswo7uw1pPyKh/fiZc6/ABYUc/vdiEPG0fLi4AqYgtxI3401FHVGsR1g+ATy45oHwM9uy+P2vJDCgXsw==", "email"=>"ndvuong1996@gmail.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "ndvuong1996@gmail.com"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "ndvuong1996@gmail.com"]]
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 110ms (Views: 108.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2016-09-21 08:45:58 +0700
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-09-21 08:45:58 +0700
+
+
+Started POST "/session" for 127.0.0.1 at 2016-09-21 08:46:07 +0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0ffv/3oNRIcgxtEuZD12vR67mKcc2CxNG7dqWRjUzEhZL0b9mWx+2p9C3wq9QwZDd8lK92G1nZ4YUIWseeP11Q==", "email"=>"ndvuong1996@gmail.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "ndvuong1996@gmail.com"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "ndvuong1996@gmail.com"]]
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 135ms (Views: 133.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-09-21 08:46:07 +0700
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2016-09-21 08:46:07 +0700
+
+
+Started GET "/users/new" for 127.0.0.1 at 2016-09-21 08:46:52 +0700
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (1.7ms)
+  Rendered users/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 123ms (Views: 122.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2016-09-21 08:46:52 +0700
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-09-21 08:46:52 +0700
+
+
+Started POST "/users" for 127.0.0.1 at 2016-09-21 08:46:55 +0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0b/IDYdDYUdrQdaEv8DOIZLlBNMLd0XKlV0mdHp+B65ZZ2EPZCJbGtTF2KBmvr7f+5fWg3Ya9BmWusmBG0k+Mw==", "user"=>{"email"=>"ndvuong1996@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("email", "password", "created_at", "updated_at", "confirm_token") VALUES (?, ?, ?, ?, ?)[0m  [["email", "ndvuong1996@gmail.com"], ["password", "36a84a0a604294371ae4f56190622ada6dae58f2"], ["created_at", "2016-09-21 01:46:55.014931"], ["updated_at", "2016-09-21 01:46:55.014931"], ["confirm_token", "cUlJHss0_QBNY7Q-jTKtYw"]]
+  [1m[35m (207.1ms)[0m  commit transaction
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from create at /home/vuong/Desktop/sharing-blog-vuong/app/controllers/users_controller.rb:27)
+  Rendered user_mailer/registration_confirmation.text.erb (0.2ms)
+
+UserMailer#registration_confirmation: processed outbound mail in 10.9ms
+
+Sent mail to ndvuong1996@gmail.com (11270.0ms)
+Date: Wed, 21 Sep 2016 08:46:55 +0700
+From: ndvuong1996@gmail.com
+To: ndvuong1996@gmail.com
+Message-ID: <57e1e68f3c862_cd23fdfe5959dcc86355@superman.mail>
+Subject: Registration Confirmation
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Hi ndvuong1996@gmail.com,
+
+Thanks for registering! To confirm your registration click the URL below.
+
+https://sharing-blog-vuong.herokuapp.com/users/cUlJHss0_QBNY7Q-jTKtYw/confirm_email
+Redirected to http://localhost:3000/
+Completed 302 Found in 11506ms (ActiveRecord: 207.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-21 08:47:06 +0700
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.4ms)[0m  [1mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 137ms (Views: 135.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2016-09-21 08:47:06 +0700
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-09-21 08:47:06 +0700
+
+
+Started GET "/login" for 127.0.0.1 at 2016-09-21 08:47:09 +0700
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 116ms (Views: 115.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2016-09-21 08:47:11 +0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sr4Es0gc4RZ5nPpwL7Y5zSGmPh+NjyKCZJsJtVFS1246Zq2xq33bS8YY9FT2yEkzSNTsT/Dik1FnfOZAMGXu8w==", "email"=>"ndvuong1996@gmail.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "ndvuong1996@gmail.com"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "ndvuong1996@gmail.com"]]
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 119ms (Views: 110.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2016-09-21 08:47:12 +0700
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-09-21 08:47:12 +0700
+
+
+Started POST "/session" for 127.0.0.1 at 2016-09-21 08:48:30 +0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lJ/qNaVhvx6hL+rpI7vfgDdL+1X9RmcfADEnUotM5a8cR0M3RgCFQx6r5M36xa9+XjkpBYAr1swD1sin6nvcMg==", "email"=>"vuongnd@student.passerellesnumeriques.org", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "vuongnd@student.passerellesnumeriques.org"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "vuongnd@student.passerellesnumeriques.org"]]
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 123ms (Views: 121.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2016-09-21 08:48:31 +0700
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-09-21 08:48:31 +0700
+
+
+Started POST "/session" for 127.0.0.1 at 2016-09-21 08:48:45 +0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vETP2fOxaXHjpCETUTmbyB2jJnrg3dgpF+rR5GSjPhk0nGbbENBTLFwgLzeIR+s2dNH0Kp2wafoUDT4RBZQHhA==", "email"=>"vuongnd@student.passerellesnumeriques.org", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "vuongnd@student.passerellesnumeriques.org"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "vuongnd@student.passerellesnumeriques.org"]]
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 158ms (Views: 155.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2016-09-21 08:48:45 +0700
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-09-21 08:48:45 +0700
+
+
+Started GET "/login" for 127.0.0.1 at 2016-09-21 08:49:01 +0700
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 135ms (Views: 134.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-09-21 08:49:01 +0700
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2016-09-21 08:49:01 +0700
+
+
+Started POST "/session" for 127.0.0.1 at 2016-09-21 08:49:20 +0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2Zb24ReveYYKjXiz7JSPEoI+h04BzBO2K+K0rTcY9ghRTl/j9M5D27UJdpc16v/s60xVHnyhomUoBVtYVi/PlQ==", "email"=>"vuongnd@student.passerellesnumeriques.org", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "vuongnd@student.passerellesnumeriques.org"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "vuongnd@student.passerellesnumeriques.org"]]
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 135ms (Views: 133.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2016-09-21 08:49:21 +0700
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-09-21 08:49:21 +0700
+
+
+Started POST "/session" for 127.0.0.1 at 2016-09-21 08:49:57 +0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6xI9Na5mqougDSN0hbo1o0FsrcZM4WeWUVURmEKQYTxjypQ3TQeQ1h+JLVBcxEVdKB5/ljGM1kVSsv5tI6dYoQ==", "email"=>"vuongnd@student.passerellesnumeriques.org", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "vuongnd@student.passerellesnumeriques.org"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "vuongnd@student.passerellesnumeriques.org"]]
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 123ms (Views: 121.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2016-09-21 08:49:57 +0700
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-09-21 08:49:57 +0700
+
+
+Started POST "/session" for 127.0.0.1 at 2016-09-21 08:50:03 +0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"O89f/nMO4C/l6VLwyaNVJtH6BWhfUZre8Auy0+xyaruzF/b8kG/aclptXNQQ3SXYuIjXOCI8Kw3z7F0mjUVTJg==", "email"=>"ndvuong1996@gmail.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "ndvuong1996@gmail.com"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "ndvuong1996@gmail.com"]]
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 129ms (Views: 127.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2016-09-21 08:50:04 +0700
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-09-21 08:50:04 +0700
+
+
+Started POST "/session" for 127.0.0.1 at 2016-09-21 08:50:05 +0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IXAscXfir6cvPg3R29Jj8qlx5eE8xm/5PrVtzSX8KDepqIVzlIOV+pC6A/UCrBMMwAM3sUGr3io9UoI4RMsRqg==", "email"=>"ndvuong1996@gmail.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "ndvuong1996@gmail.com"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "ndvuong1996@gmail.com"]]
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 112ms (Views: 110.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-09-21 08:50:05 +0700
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2016-09-21 08:50:05 +0700
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2016-09-21 08:50:33 +0700
+Processing by ContactsController#new as HTML
+Redirected to http://localhost:3000/login
+Filter chain halted as :authenticate rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-09-21 08:50:33 +0700
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 133ms (Views: 132.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2016-09-21 08:50:33 +0700
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-09-21 08:50:33 +0700
+
+
+Started POST "/session" for 127.0.0.1 at 2016-09-21 08:50:35 +0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fdghs17yzRHPhqwnc71wcUXBYbt4+FmWe4UWHRFyplP1AIixvZP3THACogOqwwCPLLOz6wWV6EV4YvnocEWfzg==", "email"=>"ndvuong1996@gmail.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "ndvuong1996@gmail.com"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "ndvuong1996@gmail.com"]]
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 149ms (Views: 146.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2016-09-21 08:50:36 +0700
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-09-21 08:50:36 +0700
+
+
+Started POST "/session" for 127.0.0.1 at 2016-09-21 08:50:38 +0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gVFhmv8Fk2Ufg9usNCDcuLBp955aoQEF+rUZ6en4p7UJiciYHGSpOKAH1YjtXqxG2RslzifMsNb5UvYciM+eKA==", "email"=>"ndvuong1996@gmail.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "ndvuong1996@gmail.com"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "ndvuong1996@gmail.com"]]
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 134ms (Views: 132.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-09-21 08:50:38 +0700
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2016-09-21 08:50:38 +0700
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-21 08:52:15 +0700
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.4ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 154ms (Views: 152.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-21 08:52:15 +0700
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.5ms)[0m  [1mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 130ms (Views: 128.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2016-09-21 08:52:16 +0700
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-09-21 08:52:16 +0700
+
+
+Started GET "/login" for 127.0.0.1 at 2016-09-21 08:52:18 +0700
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 112ms (Views: 111.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2016-09-21 08:52:20 +0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2nm4ePy9bZPE4qlS/AJEsmVoTNp271ajzlMjg9p7Tw1SoRF6H9xXzntmp3YlfDRMDBqeiguC53DNtMx2u0x2kA==", "email"=>"ndvuong1996@gmail.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "ndvuong1996@gmail.com"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "ndvuong1996@gmail.com"]]
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 138ms (Views: 129.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2016-09-21 08:52:20 +0700
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-09-21 08:52:20 +0700
+
+
+Started POST "/session" for 127.0.0.1 at 2016-09-21 08:52:23 +0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xc6FIlgn1QWR/rL8GBRssV4+1kaXhRg6rCti/KjfQCNNFiwgu0bvWC56vNjBahxPN0wEFuroqemvzI0Jyeh5vg==", "email"=>"ndvuong1996@gmail.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "ndvuong1996@gmail.com"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "ndvuong1996@gmail.com"]]
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 137ms (Views: 135.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2016-09-21 08:52:23 +0700
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-09-21 08:52:23 +0700
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-21 08:52:28 +0700
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 127ms (Views: 125.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2016-09-21 08:52:28 +0700
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-09-21 08:52:28 +0700
+
+
+Started GET "/login" for 127.0.0.1 at 2016-09-21 08:52:32 +0700
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 121ms (Views: 120.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2016-09-21 08:52:34 +0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"S6YVhLOM8WSXt4aPmmZij8I5VEO4FGqzJHp/z5dwIRjDfryGUO3LOSgziKtDGBJxq0uGE8V522AnnZA69kcYhQ==", "email"=>"ndvuong1996@gmail.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "ndvuong1996@gmail.com"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "ndvuong1996@gmail.com"]]
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 147ms (Views: 144.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2016-09-21 08:52:34 +0700
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-09-21 08:52:34 +0700
+
+
+Started POST "/session" for 127.0.0.1 at 2016-09-21 08:52:40 +0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+teWcCd8ofAGO/mBmfaY/jESxoRnfYJITYLCbZ2T1wxyDz9yxB2brbm/96VAiOgAWGAU1BoQM5tOZS2Y/KTukQ==", "email"=>"ndvuong1996@gmail.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "ndvuong1996@gmail.com"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "ndvuong1996@gmail.com"]]
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 127ms (Views: 125.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-09-21 08:52:40 +0700
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2016-09-21 08:52:40 +0700
+
+
+Started POST "/session" for 127.0.0.1 at 2016-09-21 08:52:53 +0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BwO8ZBe0Bdfx0OD9jNOO1vm7fREqWrrwjhlvEDrJNeeP2xVm9NU/ik5U7tlVrf4okMmvQVc3CyON/oDlW/4Meg==", "email"=>"vuongnd@student.passerellesnumeriques.org", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "vuongnd@student.passerellesnumeriques.org"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "vuongnd@student.passerellesnumeriques.org"]]
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 124ms (Views: 121.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-09-21 08:52:53 +0700
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2016-09-21 08:52:53 +0700
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-21 08:53:11 +0700
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.2ms)[0m  [1mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 136ms (Views: 134.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2016-09-21 08:53:11 +0700
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-09-21 08:53:11 +0700
+
+
+Started GET "/login" for 127.0.0.1 at 2016-09-21 08:53:19 +0700
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 151ms (Views: 141.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2016-09-21 08:53:21 +0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"az6QiPl9axD5wkUbdAYTpHPfrS3MqN3tWPPvKIzPSwYlOAdwLMBkqxDxa7sNikpMtkgQzSC5YdYFusMaTXNQoA==", "email"=>"ndvuong1996@gmail.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "ndvuong1996@gmail.com"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "ndvuong1996@gmail.com"]]
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 125ms (Views: 122.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2016-09-21 08:53:21 +0700
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-09-21 08:53:21 +0700
+
+
+Started POST "/session" for 127.0.0.1 at 2016-09-21 08:53:51 +0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7pVwFLUKUHfpLJt9/1Sr8hniTpElcPT/I3a4CsgmDNugk+fsYLdfzAAftd2G2PIa3HXzcclhSMR+P5Q4CZoXfQ==", "email"=>"vuongnd@student.passerellesnumeriques.org", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "vuongnd@student.passerellesnumeriques.org"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "vuongnd@student.passerellesnumeriques.org"]]
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 130ms (Views: 127.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2016-09-21 08:53:51 +0700
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-09-21 08:53:51 +0700
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-21 08:54:20 +0700
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.4ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 141ms (Views: 140.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/articles.self-eb2262cda91ef80193cdc5fc4671811d2678337d62ca2b5db36a81328597deda.css?body=1" for 127.0.0.1 at 2016-09-21 08:54:20 +0700
+
+
+Started GET "/assets/comments.self-c2b6144deb772d373a84c821142edaf55cfdecc4a3f6615b57000707aeaa3581.css?body=1" for 127.0.0.1 at 2016-09-21 08:54:20 +0700
+
+
+Started GET "/assets/types.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-09-21 08:54:20 +0700
+
+
+Started GET "/assets/commentshares.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-09-21 08:54:20 +0700
+
+
+Started GET "/assets/contacts.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-09-21 08:54:20 +0700
+
+
+Started GET "/assets/profiles.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-09-21 08:54:20 +0700
+
+
+Started GET "/assets/shares.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-09-21 08:54:20 +0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-09-21 08:54:20 +0700
+
+
+Started GET "/assets/application.self-3e33af54b11a9020ba7771c23b3720294e0c55981df235b630fd460610da6534.css?body=1" for 127.0.0.1 at 2016-09-21 08:54:20 +0700
+
+
+Started GET "/assets/articles.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-09-21 08:54:20 +0700
+
+
+Started GET "/assets/commentshares.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-09-21 08:54:20 +0700
+
+
+Started GET "/assets/profiles.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-09-21 08:54:20 +0700
+
+
+Started GET "/assets/share.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-09-21 08:54:20 +0700
+
+
+Started GET "/assets/shares.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-09-21 08:54:20 +0700
+
+
+Started GET "/assets/types.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-09-21 08:54:20 +0700
+
+
+Started GET "/assets/application.self-7862a8a8b42407b4741a1adeeea35f0d13ddc4f702ec532adb0674491d296495.js?body=1" for 127.0.0.1 at 2016-09-21 08:54:20 +0700
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2016-09-21 08:54:20 +0700
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-09-21 08:54:20 +0700
+
+
+Started GET "/login" for 127.0.0.1 at 2016-09-21 08:54:22 +0700
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 160ms (Views: 159.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2016-09-21 08:54:35 +0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oaatyjMp5BDLHbaeS7IcJsi9cWrIEOE6nszWXtA2LuTyor6/jUEkriOAUY7pctQXPv1knzSvsFLyR05Gmv9zoA==", "email"=>"ndvuong1996@gmail.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "ndvuong1996@gmail.com"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "ndvuong1996@gmail.com"]]
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 130ms (Views: 128.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2016-09-21 08:54:35 +0700
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-09-21 08:54:35 +0700
+
+
+Started POST "/session" for 127.0.0.1 at 2016-09-21 08:54:58 +0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"p6e+FWqTwfSaHphpM9CxVf9w5d8crA+F362HTlJUACH0o61g1PsBSnKDf3mREHlkCTDwKuATXu2zJh9WGJ1dZQ==", "email"=>"vuongnd@student.passerellesnumeriques.org", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "vuongnd@student.passerellesnumeriques.org"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "vuongnd@student.passerellesnumeriques.org"]]
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 141ms (Views: 139.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2016-09-21 08:54:58 +0700
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-09-21 08:54:59 +0700
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-21 08:55:30 +0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.2ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 639ms (Views: 630.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-21 08:55:31 +0700
+Processing by ArticlesController#index as HTML
+  [1m[36mArticle Load (0.3ms)[0m  [1mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 210ms (Views: 208.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2016-09-21 08:55:31 +0700
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-09-21 08:55:31 +0700
+
+
+Started GET "/login" for 127.0.0.1 at 2016-09-21 08:55:33 +0700
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 162ms (Views: 161.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2016-09-21 08:55:36 +0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9YoTMG0tfHJeR7Xuub9f4iFNgXejViOld3v74G2rVD27jITIuJBzybd0m07AMwYK5No8l09Hn54qMtfSrBdPmw==", "email"=>"ndvuong1996@gmail.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "ndvuong1996@gmail.com"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "ndvuong1996@gmail.com"]]
+  Rendered sessions/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 141ms (Views: 124.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-09-21 08:55:36 +0700
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2016-09-21 08:55:36 +0700
+
+
+Started POST "/session" for 127.0.0.1 at 2016-09-21 08:55:52 +0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"08YyCMyKUtYxXT1ZniffmWXmiaUiWPmiAyklLMGGZhmdwKXwGTddbdhuE/nnq4ZxoHE0Rc5JRZleYAkeADp9vw==", "email"=>"ndvuong1996@gmail.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "ndvuong1996@gmail.com"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "ndvuong1996@gmail.com"]]
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 127ms (Views: 124.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2016-09-21 08:55:52 +0700
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-09-21 08:55:52 +0700
+
+
+Started POST "/session" for 127.0.0.1 at 2016-09-21 08:55:53 +0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JxO+UUCcGMntzLaDBR/HWSKs7b+3lKvAyyKVtKrpJfVpFSmplSEXcgT/mCN8k56x5ztQX1uFF/uWa7mGa1U+Uw==", "email"=>"ndvuong1996@gmail.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "ndvuong1996@gmail.com"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "ndvuong1996@gmail.com"]]
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 158ms (Views: 156.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-09-21 08:55:54 +0700
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2016-09-21 08:55:54 +0700
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2016-09-21 08:56:04 +0700
+Processing by ContactsController#new as HTML
+Redirected to http://localhost:3000/login
+Filter chain halted as :authenticate rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-09-21 08:56:04 +0700
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 130ms (Views: 129.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-09-21 08:56:04 +0700
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2016-09-21 08:56:04 +0700
+
+
+Started GET "/shares" for 127.0.0.1 at 2016-09-21 08:56:07 +0700
+Processing by SharesController#index as HTML
+  [1m[35mShare Load (0.2ms)[0m  SELECT "shares".* FROM "shares"
+  Rendered shares/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 125ms (Views: 123.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2016-09-21 08:56:08 +0700
+Processing by ContactsController#new as HTML
+Redirected to http://localhost:3000/login
+Filter chain halted as :authenticate rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2016-09-21 08:56:08 +0700
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 121ms (Views: 120.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2016-09-21 08:56:10 +0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jwEBdN3k1pcb8pV8U5EX+tH/ryP21YrMFXzjHDSsQ4nBB5aMCFnZLPLBu9wqHU4SFGgSwxrENvdINc8u9RBYLw==", "email"=>"ndvuong1996@gmail.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "ndvuong1996@gmail.com"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "ndvuong1996@gmail.com"]]
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 123ms (Views: 121.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-09-21 08:56:10 +0700
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2016-09-21 08:56:10 +0700
+
+
+Started POST "/session" for 127.0.0.1 at 2016-09-21 08:56:27 +0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jwEBdN3k1pcb8pV8U5EX+tH/ryP21YrMFXzjHDSsQ4nBB5aMCFnZLPLBu9wqHU4SFGgSwxrENvdINc8u9RBYLw==", "email"=>"ndvuong1996@gmail.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "ndvuong1996@gmail.com"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "ndvuong1996@gmail.com"]]
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 138ms (Views: 130.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/comments.self-c2b6144deb772d373a84c821142edaf55cfdecc4a3f6615b57000707aeaa3581.css?body=1" for 127.0.0.1 at 2016-09-21 08:56:27 +0700
+
+
+Started GET "/assets/contacts.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-09-21 08:56:27 +0700
+
+
+Started GET "/assets/commentshares.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-09-21 08:56:27 +0700
+
+
+Started GET "/assets/articles.self-eb2262cda91ef80193cdc5fc4671811d2678337d62ca2b5db36a81328597deda.css?body=1" for 127.0.0.1 at 2016-09-21 08:56:27 +0700
+
+
+Started GET "/assets/profiles.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-09-21 08:56:27 +0700
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-09-21 08:56:27 +0700
+
+
+Started GET "/assets/shares.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-09-21 08:56:27 +0700
+
+
+Started GET "/assets/types.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-09-21 08:56:27 +0700
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-09-21 08:56:27 +0700
+
+
+Started GET "/assets/application.self-3e33af54b11a9020ba7771c23b3720294e0c55981df235b630fd460610da6534.css?body=1" for 127.0.0.1 at 2016-09-21 08:56:27 +0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for 127.0.0.1 at 2016-09-21 08:56:27 +0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for 127.0.0.1 at 2016-09-21 08:56:27 +0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-09-21 08:56:27 +0700
+
+
+Started GET "/assets/jquery-ui/datepicker.self-6267be6d4d0f0e8665be3b4d6ac07f40ba23a32aff8eaa5d1bfc00f76a9eeae7.js?body=1" for 127.0.0.1 at 2016-09-21 08:56:27 +0700
+
+
+Started GET "/assets/jquery-ui/core.self-93be4d22eda916787802a64d8f88b52db8a9027d4ccbbc0942625324a7d12d44.js?body=1" for 127.0.0.1 at 2016-09-21 08:56:27 +0700
+
+
+Started GET "/assets/jquery-ui/widget.self-c1602241ddc51216b58391768667068867b8e15b9efc722befcd25771eda6819.js?body=1" for 127.0.0.1 at 2016-09-21 08:56:27 +0700
+
+
+Started GET "/assets/jquery-ui/button.self-4d4f21ba77bbf8cc08ae65e2b6329a7a1b952b32c3ba7bffca8313e7e8c93d0c.js?body=1" for 127.0.0.1 at 2016-09-21 08:56:27 +0700
+
+
+Started GET "/assets/jquery-ui/mouse.self-c513294e8da73f31f84ba3ef11e2a1180a47faea0eb2fea4a53fc26153dd21fd.js?body=1" for 127.0.0.1 at 2016-09-21 08:56:27 +0700
+
+
+Started GET "/assets/jquery-ui/draggable.self-debcca3d0d5d9afe2fe91a6fd1aebdb41ca0a55f2f6017352e6c02b6d8a6e64c.js?body=1" for 127.0.0.1 at 2016-09-21 08:56:27 +0700
+
+
+Started GET "/assets/jquery-ui/position.self-e693ced4ecfa1a276f0b794f32c1d30d792764b08788bf68ecfa3b388c291333.js?body=1" for 127.0.0.1 at 2016-09-21 08:56:27 +0700
+
+
+Started GET "/assets/jquery-ui/resizable.self-60b870565f3cd62982c1907828119bb51f42ec8228d5e23868153edc3abc685c.js?body=1" for 127.0.0.1 at 2016-09-21 08:56:27 +0700
+
+
+Started GET "/assets/jquery-ui/dialog.self-5a6c7980dfa3f6b74445b0f4b20eed799ee65363163500ed7f032e603d6b022d.js?body=1" for 127.0.0.1 at 2016-09-21 08:56:27 +0700
+
+
+Started GET "/assets/jquery-ui/sortable.self-df2d80a36f9dfbe0facc596ccd92af83ca50d38e4cd6a84810aaf5d40b8cd181.js?body=1" for 127.0.0.1 at 2016-09-21 08:56:27 +0700
+
+
+Started GET "/assets/jquery-ui/tabs.self-dc07b44bf1b926c8d28ccd2658e30933881e5329348caf70cf305c3943f6bbd7.js?body=1" for 127.0.0.1 at 2016-09-21 08:56:27 +0700
+
+
+Started GET "/assets/active_admin/jquery_ui.self-01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b.js?body=1" for 127.0.0.1 at 2016-09-21 08:56:27 +0700
+
+
+Started GET "/assets/active_admin/base.self-ab2cb3098b53fe7d229937d768d701e8f4013f2a5aea7988d8f2149fa40426db.js?body=1" for 127.0.0.1 at 2016-09-21 08:56:27 +0700
+
+
+Started GET "/assets/active_admin/lib/batch_actions.self-10ee4c07784b00259ca97a02c4e7fb53c1b27ebe5653a3b910426b4ea0941250.js?body=1" for 127.0.0.1 at 2016-09-21 08:56:27 +0700
+
+
+Started GET "/assets/active_admin/lib/checkbox-toggler.self-ffdc88fc1b3b6bcfac3e314f191fc486175ab5a4b5daab87af6bd208cb483bd8.js?body=1" for 127.0.0.1 at 2016-09-21 08:56:27 +0700
+
+
+Started GET "/assets/active_admin/lib/dropdown-menu.self-161387c54d1640bd9f174301b77d73ea88ce6d7daf0d7356bd50b4d0143d1b72.js?body=1" for 127.0.0.1 at 2016-09-21 08:56:27 +0700
+
+
+Started GET "/assets/active_admin/lib/flash.self-8f05a5d9328ea28fca100b057787fbfb567986513c5f1735ea48fad8f9571c10.js?body=1" for 127.0.0.1 at 2016-09-21 08:56:27 +0700
+
+
+Started GET "/assets/active_admin/lib/has_many.self-ece319debdc01ca5096ae8ac6c130ffc0decab382543b4b94e18591375d3d3bb.js?body=1" for 127.0.0.1 at 2016-09-21 08:56:27 +0700
+
+
+Started GET "/assets/active_admin/lib/modal_dialog.self-0e86d9de4b99cb242de337a342f957f4872f686afc40f31f32d855672b1cd878.js?body=1" for 127.0.0.1 at 2016-09-21 08:56:27 +0700
+
+
+Started GET "/assets/active_admin/lib/per_page.self-d7697643296439a8f6aadbf22a229d8ce9b4e8e530ca854164398141006bcfda.js?body=1" for 127.0.0.1 at 2016-09-21 08:56:27 +0700
+
+
+Started GET "/assets/active_admin/lib/table-checkbox-toggler.self-f5200d732ec9ffd4ee8fd1fe11524ad7b54a67f6c0ef447a29d119ece2dcecdb.js?body=1" for 127.0.0.1 at 2016-09-21 08:56:27 +0700
+
+
+Started GET "/assets/active_admin/ext/jquery-ui.self-f96f2ec2a32c4bc4da4292cc74bddeca0bb223d81a421c98c4d613632860945e.js?body=1" for 127.0.0.1 at 2016-09-21 08:56:27 +0700
+
+
+Started GET "/assets/active_admin/ext/jquery.self-da8dafbbe883092bcae73f35a8caf4ae6170fe7d8130ae7039a233f9b509c757.js?body=1" for 127.0.0.1 at 2016-09-21 08:56:27 +0700
+
+
+Started GET "/assets/active_admin/application.self-50ffc9f86e474cd52ffb7ce3b3572255ad6646ea17097a056f330b540eae402c.js?body=1" for 127.0.0.1 at 2016-09-21 08:56:27 +0700
+
+
+Started GET "/assets/active_admin.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-09-21 08:56:27 +0700
+
+
+Started GET "/assets/articles.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-09-21 08:56:27 +0700
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-09-21 08:56:27 +0700
+
+
+Started GET "/assets/commentshares.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-09-21 08:56:27 +0700
+
+
+Started GET "/assets/contacts.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-09-21 08:56:27 +0700
+
+
+Started GET "/assets/profiles.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-09-21 08:56:27 +0700
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-09-21 08:56:28 +0700
+
+
+Started GET "/assets/share.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-09-21 08:56:28 +0700
+
+
+Started GET "/assets/shares.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-09-21 08:56:28 +0700
+
+
+Started GET "/assets/types.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-09-21 08:56:28 +0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-09-21 08:56:28 +0700
+
+
+Started GET "/assets/bootstrap/affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for 127.0.0.1 at 2016-09-21 08:56:28 +0700
+
+
+Started GET "/assets/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for 127.0.0.1 at 2016-09-21 08:56:28 +0700
+
+
+Started GET "/assets/bootstrap/alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for 127.0.0.1 at 2016-09-21 08:56:28 +0700
+
+
+Started GET "/assets/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for 127.0.0.1 at 2016-09-21 08:56:28 +0700
+
+
+Started GET "/assets/bootstrap/collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for 127.0.0.1 at 2016-09-21 08:56:28 +0700
+
+
+Started GET "/assets/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for 127.0.0.1 at 2016-09-21 08:56:28 +0700
+
+
+Started GET "/assets/bootstrap/tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for 127.0.0.1 at 2016-09-21 08:56:28 +0700
+
+
+Started GET "/assets/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for 127.0.0.1 at 2016-09-21 08:56:28 +0700
+
+
+Started GET "/assets/bootstrap/scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for 127.0.0.1 at 2016-09-21 08:56:28 +0700
+
+
+Started GET "/assets/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for 127.0.0.1 at 2016-09-21 08:56:28 +0700
+
+
+Started GET "/assets/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for 127.0.0.1 at 2016-09-21 08:56:28 +0700
+
+
+Started GET "/assets/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for 127.0.0.1 at 2016-09-21 08:56:28 +0700
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for 127.0.0.1 at 2016-09-21 08:56:28 +0700
+
+
+Started GET "/assets/application.self-7862a8a8b42407b4741a1adeeea35f0d13ddc4f702ec532adb0674491d296495.js?body=1" for 127.0.0.1 at 2016-09-21 08:56:28 +0700
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2016-09-21 08:56:28 +0700
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-09-21 08:56:28 +0700
+
+
+Started POST "/session" for 127.0.0.1 at 2016-09-21 08:56:30 +0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"a2QYpJTJXRaMZl5eoTuRyUQrsoSp0WRJg7kkGoZboBElYo9cQXRSrWVVcP7Yt8ghgbwPZEXA2HLe8AgoR+e7tw==", "email"=>"ndvuong1996@gmail.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "ndvuong1996@gmail.com"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "ndvuong1996@gmail.com"]]
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 152ms (Views: 149.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-09-21 08:56:31 +0700
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2016-09-21 08:56:31 +0700
+
+
+Started POST "/session" for 127.0.0.1 at 2016-09-21 08:56:32 +0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xO7y7H84aCcpLeE8lCGqfhatjmL1yTtT4fwECC/GafeK6GUUqoVnnMAez5ztrfOW0zozghnYh2i8tSg67npyUQ==", "email"=>"ndvuong1996@gmail.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "ndvuong1996@gmail.com"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "ndvuong1996@gmail.com"]]
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 139ms (Views: 136.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/bootstrap-sprockets" for 127.0.0.1 at 2016-09-21 08:56:32 +0700
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2016-09-21 08:56:32 +0700

@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Commentshares</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Body</th>
+      <th>Share</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @commentshares.each do |commentshare| %>
+      <tr>
+        <td><%= commentshare.body %></td>
+        <td><%= commentshare.share_id %></td>
+        <td><%= commentshare.user_id %></td>
+        <td><%= link_to 'Show', commentshare %></td>
+        <td><%= link_to 'Edit', edit_commentshare_path(commentshare) %></td>
+        <td><%= link_to 'Destroy', commentshare, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Commentshare', new_commentshare_path %>

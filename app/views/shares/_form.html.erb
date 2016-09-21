@@ -1,0 +1,41 @@
+<%= form_for @share, url: shares_path, html: { multipart: true }  do |f| %>
+  <% if @share.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@share.errors.count, "error") %> prohibited this share from being saved:</h2>
+
+      <ul>
+      <% @share.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title, :class => "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :image %><br>
+    <%= f.file_field :image, :class => "btn-danger" %>
+  </div>
+  <div class="field">
+    <%= f.label :descriptions %><br>
+    <%= f.text_field :descriptions, :class => "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :body %><br>
+    <%= f.text_area :body, :class => "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :type_id %><br>
+    <%= f.collection_select :type_id,  Type.all, :id, :name, :class => "selectpicker"  %>
+  </div>
+  <div class="field">
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+  </div>
+  <br>
+  <div class="actions">
+    <%= f.submit :class => "btn btn-default" %>
+  </div>
+<% end %>

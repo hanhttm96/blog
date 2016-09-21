@@ -1,0 +1,43 @@
+
+
+<h1>
+  <%= @article.title %>
+</h1>
+
+<p>
+  <%= @article.descriptions %>
+</p>
+<p>
+  <%= image_tag @article.image.url, :class => "image-article" %>
+</p>
+<p>
+  <%= @article.body %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @article.type.name %>
+</p>
+<strong> Emails to: </strong> <a href="mailto:myhanhqt96@gmail.com">Admin</a> if you have any questions <br>
+
+<%= link_to 'Invite friend read it', '#',
+:onclick => "$('#notify_friend_form').slideDown()" %>
+<%= render 'notify_friend' %>
+
+<hr>
+
+<%= link_to 'Back', articles_path, :class => "btn btn-danger" %>
+
+<% if current_user %>
+	<%= render :file => 'comments/new' %>
+<% else %>
+	<%= link_to 'Please login to write comments', login_path, :class => "btn btn-primary" %>
+<% end %>
+<hr>
+
+<div id="comments">
+<%= render @article.comments %>
+</div>
+
+
+

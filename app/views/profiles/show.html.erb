@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <%= image_tag @profile.avatar.url(:medium) %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @profile.name %>
+</p>
+
+<p>
+  <strong>Birthday:</strong>
+  <%= @profile.birthday %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @profile.sex %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @profile.address %>
+</p>
+
+<%= link_to 'Edit', edit_profile_path(@profile) %> |
+<%= link_to 'Back', articles_path %>

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @commentshare.body %>
+</p>
+
+<p>
+  <strong>Share:</strong>
+  <%= @commentshare.share_id %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @commentshare.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_commentshare_path(@commentshare) %> |
+<%= link_to 'Back', commentshares_path %>

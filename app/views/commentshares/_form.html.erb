@@ -1,0 +1,29 @@
+<%= form_for(@commentshare) do |f| %>
+  <% if @commentshare.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@commentshare.errors.count, "error") %> prohibited this commentshare from being saved:</h2>
+
+      <ul>
+      <% @commentshare.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :body %><br>
+    <%= f.text_field :body %>
+  </div>
+  <div class="field">
+    <%= f.label :share_id %><br>
+    <%= f.number_field :share_id %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

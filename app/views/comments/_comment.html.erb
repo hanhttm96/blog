@@ -1,0 +1,31 @@
+<%= div_for comment do %>
+	<% if comment.body %>
+
+	<div class="media">
+	  <div class="col-xs-3">
+	  	<a>
+		   <!-- put user name here to see more -->
+			<% if (comment.user.profile).blank? %>
+				<%= comment.user.email + ": "%>
+			<% else %>
+			<div class="real-comment">
+				<%= image_tag comment.user.profile.avatar.url(:thumb)%>
+				<%= comment.user.profile.name + ": "%>
+			</div>
+			<% end %>
+		</a>	
+	  </div>
+	  <div class="col-xs-9">
+	    <%= comment.body %>
+
+			<!-- actions -->
+		<% if current_user.present? and (current_user.id == comment.user_id) %>
+			<span class='actions'>
+				<%= link_to 'Delete', [@article, comment], :confirm => 'Are you sure?', :method => :delete %>
+			</span>
+		<% end %>
+	  </div>
+	</div>
+	<hr>
+<% end %>
+<% end %>
