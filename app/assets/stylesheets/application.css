@@ -21,21 +21,6 @@
     width: 15px;
 
 }
- 
-::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
-
-}
- 
-::-webkit-scrollbar-thumb {
-    background-color: black;
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
-}
-
-html, body {
-  cursor:url(/system/imagelocal/arrow1.png),default;
-  /*cursor:url(/system/imagelocal/smiley.gif),default;*/
-}
 
 body{
   margin: 0 auto;
@@ -45,9 +30,6 @@ body{
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;*/
-}
-a, input{
-  cursor:url(/system/imagelocal/arrow.png),default;
 }
 
 
@@ -101,7 +83,7 @@ nav .menu-top {
   -ms-transform: skewX(20deg); /* IE 9 */
   -webkit-transform: skewX(20deg); /* Safari */
   transform: skewX(20deg); /* Standard syntax */
-  background-color: red; 
+
 }
 nav .menu-top a {
   padding: 12px;
